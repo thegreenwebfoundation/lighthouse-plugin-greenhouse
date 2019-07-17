@@ -4,7 +4,7 @@
   "description": "A plugin for lighthouse to check for domains using green power",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "mobile-run": "lighthouse --plugins=lighthouse-plugin-greenhouse --view --chrome-flags='--headless' --output-path=./results/mobile.html"
   },
   "keywords": [
@@ -18,6 +18,10 @@
     "npm": "^6.10.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "jest": "^24.8.0",
     "lighthouse": "^5.1.0",
     "np": "^5.0.3"
   },
