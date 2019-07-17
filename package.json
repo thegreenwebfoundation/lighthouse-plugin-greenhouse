@@ -1,6 +1,6 @@
 {
   "name": "lighthouse-plugin-greenhouse",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A plugin for lighthouse to check for domains using green power",
   "main": "src/index.js",
   "scripts": {
