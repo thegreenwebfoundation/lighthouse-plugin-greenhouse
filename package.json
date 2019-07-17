@@ -14,10 +14,12 @@
   "license": "Apache-2.0",
   "dependencies": {
     "axios": "^0.19.0",
-    "debug": "^4.1.1"
+    "debug": "^4.1.1",
+    "npm": "^6.10.1"
   },
   "devDependencies": {
-    "lighthouse": "^5.1.0"
+    "lighthouse": "^5.1.0",
+    "np": "^5.0.3"
   },
   "peerDependencies": {
     "lighthouse": "^5.1.0"
