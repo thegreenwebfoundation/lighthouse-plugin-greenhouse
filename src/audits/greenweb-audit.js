@@ -52,10 +52,10 @@ class GreenAudit extends Audit {
         // Also return the total number of cat images that can be used by report JSON consumers.
         numericValue: greyDomainResults.length,
       };
-    }
-  } catch(error) {
-    createErrorResult(error)
+    } catch (error) {
+      createErrorResult(error)
 
+    }
   }
 
 }
