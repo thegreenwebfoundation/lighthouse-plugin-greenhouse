@@ -1,0 +1,7 @@
+node_modules
+results/*
+!results/.gitkeep
+bin
+.vscode
+package-lock.json
+.node-version
