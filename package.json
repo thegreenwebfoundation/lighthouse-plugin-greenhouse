@@ -1,10 +1,11 @@
 {
-  "name": "@tgwf/lighthouse-plugin-greenweb",
+  "name": "lighthouse-plugin-greenweb",
   "version": "0.0.1",
   "description": "A plugin for lighthouse to check for domains using green power",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mobile-run": "lighthouse --plugins=lighthouse-plugin-greenweb --view --chrome-flags='--headless' --output-path=./results/mobile.html"
   },
   "keywords": [
     "tgwf"
@@ -12,13 +13,13 @@
   "author": "Chris Adams",
   "license": "Apache-2.0",
   "dependencies": {
-    "lighthouse": "^5.1.0"
-  },
-  "devDependencies": {
     "axios": "^0.19.0",
     "debug": "^4.1.1"
   },
+  "devDependencies": {
+    "lighthouse": "^5.1.0"
+  },
   "peerDependencies": {
-    "lighthouse": "^5.0.0"
+    "lighthouse": "^5.1.0"
   }
 }
