@@ -10,10 +10,13 @@ const GreenCheck = {
     return response
   },
 
-  checkDomains(domains) {
-    const greenChecks = await domainArray.map(async (domain) => {
-      const resp = await runGreenCheck(domain)
-      return resp.data
+  async checkDomains(domains) {
+    const greenChecks = await domains.map(async (domain) => {
+      if (domain.length > 2) {
+        const resp = await this.runGreenCheck(domain)
+
+        return resp
+      }
     })
 
     const greenCheckResults = await Promise.all(greenChecks).then(values => {
@@ -24,7 +27,7 @@ const GreenCheck = {
       })
     })
 
-    const greenDomainResults = greenCheckResults.filter(res => { res.green == 'true' })
+    const greenDomainResults = greenCheckResults.filter(res => { return res.green == true })
 
     let greenDomainScore
     if (greenDomainResults.length === 0) {
@@ -32,9 +35,10 @@ const GreenCheck = {
     } else {
       greenDomainScore = greenDomainResults.length / greenCheckResults.length
     }
+    console.log(greenDomainScore, greenCheckResults)
     return {
-      greenDomainScore,
-      greenCheckResults
+      score: greenDomainScore,
+      greenChecks: greenCheckResults
     }
   }
 

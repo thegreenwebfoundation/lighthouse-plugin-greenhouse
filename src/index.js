@@ -1,6 +1,6 @@
 module.exports = {
   audits: [
-    { path: 'lighthouse-plugin-field-greenweb/src/audits/greenweb-audit.js' },
+    { path: 'lighthouse-plugin-greenweb/src/audits/greenweb-audit.js' },
 
   ],
   groups: {
@@ -9,9 +9,9 @@ module.exports = {
     }
   },
   category: {
-    title: 'Green Web',
+    title: 'Sustainable Web',
     description:
-      'content goes here to explain ',
+      "These checks show changes to make to reduce the carbon emissions from what you build. Climate crisis, remember?",
     auditRefs: [
       { id: 'greenweb-id', weight: 1, group: 'page' },
     ]

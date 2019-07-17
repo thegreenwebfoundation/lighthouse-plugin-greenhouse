@@ -1,12 +1,12 @@
 const { runLighthouse } = require('lighthouse/lighthouse-cli/run')
 
-runLighthouse('https://www.google.com', {
-  // extends: 'lighthouse:default',
-  plugins: ['lighthouse-plugin-greenweb'],
-  output: []
-}).then(result => {
-  // console.log(NetworkRecords)
+const lhOptions = {
+  output: ['json'],
+  outputPath: './results/test-results.json',
+  chromeFlags: '--headless --enable-logging --no-sandbox',
+  plugins: ['lighthouse-plugin-greenweb']
+}
 
-  // console.log(result)
+runLighthouse('https://www.google.com', lhOptions).then(result => {
   process.exit(0);
 })
