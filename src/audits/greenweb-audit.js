@@ -13,7 +13,7 @@ function createErrorResult(err) {
 class GreenAudit extends Audit {
   static get meta() {
     return {
-      id: 'greenweb-id',
+      id: 'greenhouse-id',
       title: 'Page is built using resources from servers running on green energy',
       failureTitle: 'Page is built using resources from servers running on fossil fuels',
       description:

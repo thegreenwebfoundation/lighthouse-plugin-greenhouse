@@ -4,7 +4,7 @@ const lhOptions = {
   output: ['json'],
   outputPath: './results/test-results.json',
   chromeFlags: '--headless --enable-logging --no-sandbox',
-  plugins: ['lighthouse-plugin-greenweb']
+  plugins: ['lighthouse-plugin-greenhouse']
 }
 
 runLighthouse('https://www.google.com', lhOptions).then(result => {
