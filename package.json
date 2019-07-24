@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
-    "mobile-run": "lighthouse --plugins=lighthouse-plugin-greenhouse --view --chrome-flags='--headless' --output-path=./results/mobile.html"
+    "mobile-run": "lighthouse --plugins=lighthouse-plugin-greenhouse --view --chrome-flags='--headless' --output-path=./results/mobile.html",
+    "json-run": "lighthouse --plugins=lighthouse-plugin-greenhouse --chrome-flags='--headless' --output=json --output-path=./report.json"
   },
   "keywords": [
     "tgwf"
