@@ -3,7 +3,7 @@ node_js:
   - "11"
 before_script:
   - npm link
-  - link lighthouse-plugin-greenhouse
+  - npm link lighthouse-plugin-greenhouse
 addons:
   apt:
     sources:
