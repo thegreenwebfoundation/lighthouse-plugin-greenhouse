@@ -1,0 +1,10 @@
+language: node_js
+before_script:
+  - npm link
+  - link lighthouse-plugin-greenhouse
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
