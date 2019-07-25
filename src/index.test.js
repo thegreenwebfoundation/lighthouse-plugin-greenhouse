@@ -31,5 +31,5 @@ describe("Greenhouse", () => {
     debug(score)
     expect(score).toBeLessThan(1)
 
-  }, 20000)
+  }, 30000)
 })
