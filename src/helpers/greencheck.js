@@ -35,7 +35,7 @@ const GreenCheck = {
     } else {
       greenDomainScore = greenDomainResults.length / greenCheckResults.length
     }
-    console.log(greenDomainScore, greenCheckResults)
+    debug(greenDomainScore, greenCheckResults)
     return {
       score: greenDomainScore,
       greenChecks: greenCheckResults
