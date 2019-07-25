@@ -17,7 +17,7 @@ But given climate change is a thing, what about making websites planet friendly 
 
 Greenhouse is a lighthouse plugin, means you need lighthouse installed before you can use this plugin.
 
-This readme assumes you have some familiarity with lighthouse, and know how to install it with npm or your prferred package manager:
+This readme assumes you have some familiarity with lighthouse, and know how to install it with npm or your preferred package manager:
 
 ```
 npm install lighthouse
@@ -71,6 +71,10 @@ You don't need to be a hard core developer to contribute to it, as help with cop
 
 ### FAQ's
 
+#### Is this the most effective thing I can do?
+
+No, but given that _page weight budgets are effectively carbon budgets for websites_, it's worth using, and is a way in to thinking systemically about the environmental impact of the digital products we build. You can read more here in this post about the impact of [sending data over the wire](https://www.thegreenwebfoundation.org/news/packets-yet-another-lever-for-a-low-carbon-internet/). There are other levers available your organisation too, from changes to [infrastructure you control directly (aka _Platform_)](https://www.thegreenwebfoundation.org/news/provisioning-and-providers-two-levers-for-a-lower-carbon-internet/), or [changes to where and how you work (process)](https://www.thegreenwebfoundation.org/news/place-policy-procurement-more-levers-for-a-lower-carbon-internet/).
+
 #### I'm seeing a my site marked green when it should be grey (or vice versa)!
 
 This plugin uses data from The Green Web Foundation, specifically the [Green Web API](https://api.thegreenwebfoundation.org/). If you host infrastructure yourself, you can [update the information yourself on the admin site][tgwf-admin-site].
@@ -80,3 +84,9 @@ This plugin uses data from The Green Web Foundation, specifically the [Green Web
 If you use infrastructure run by someone else, it's important that you ask them as a customer or user - this is the number one reason cited for continuing to use infrastructure that runs on fossil fuels.
 
 [tgwf-admin-site]: https://admin.thegreenwebfoundation.org/
+
+#### I work in tech, I'm freaking out about the climate and I want to know what else I can do
+
+Yeah, it's scary AF.
+
+You can work with the [The Green Web Foundation](https://www.thegreenwebfoundation.org/) to work out a plan for reducing emissions, by following [this contact form](https://docs.google.com/forms/d/1W-Xc_2bjoor1sV2mufeYqoWntE1c0f0Ib6xL4HhHNc8/viewform?edit_requested=true), or come hang out in the [Climate Action Tech Slack](http://climateaction.tech/) - there's a bunhc of us trying to figure it out, and you're welcome to join us.
