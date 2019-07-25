@@ -39,6 +39,30 @@ Make sure you have Google lighthouse installed version 5 for above, and node 10 
 npx lighthouse https://www.yoursite.com --plugins=lighthouse-plugin-greenweb
 ```
 
+You can also run this in a script if you want to automate running this, like as part of continuous integration process, to break the build when you're using infrastructure that relies on fossil fuels.
+
+```javascript
+
+import { runLighthouse } from "lighthouse/lighthouse-cli/run"
+
+const lhOptions = {
+  output: ["json"],
+  chromeFlags: "--headless --enable-logging --no-sandbox",
+  plugins: ["lighthouse-plugin-greenhouse"]
+}
+
+// we're using async/await syntax, as runLighthouse returns a Promise
+async runCheck() {
+  const results = await runLighthouse("https://www.google.com", lhOptions)
+
+  // do something to inspect the result if need be
+  const score = res.lhr.categories["lighthouse-plugin-greenhouse"].score
+}
+runcheck()
+
+
+```
+
 ### Contributing
 
 See CONTRIBUTING for getting started, and either see [the issues list](https://github.com/thegreenwebfoundation/lighthouse-plugin-greenhouse/issues), or if you have questions, please [file one yourself](https://github.com/thegreenwebfoundation/lighthouse-plugin-greenhouse/issues/new).
