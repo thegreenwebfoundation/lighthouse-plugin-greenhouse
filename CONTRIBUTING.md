@@ -27,6 +27,8 @@ npm link lighthouse-plugin-greenhouse # install the link locally
 npm install #actually install everything, with the plugin available as a symlink
 ```
 
+Alternatively, you can run the `setup.sh` script, which does this for you.
+
 #### 2. Run plugin
 
 ```bash
