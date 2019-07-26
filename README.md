@@ -36,7 +36,7 @@ npm install lighthouse-plugin-greenhouse
 Make sure you have Google lighthouse installed version 5 for above, and node 10 or above. You activate it by passing a `--plugins` flag on the command line, like this example using npm's npx command, to use the local version of lighthouse:
 
 ```
-npx lighthouse https://www.yoursite.com --plugins=lighthouse-plugin-greenweb
+npx lighthouse https://www.yoursite.com --plugins=lighthouse-plugin-greenhouse
 ```
 
 You can also run this in a script if you want to automate running this, like as part of continuous integration process, to break the build when you're using infrastructure that relies on fossil fuels.
