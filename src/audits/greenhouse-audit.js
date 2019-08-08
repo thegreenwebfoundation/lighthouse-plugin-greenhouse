@@ -1,6 +1,7 @@
 const { Audit, NetworkRecords } = require('lighthouse');
 const Greencheck = require('../helpers/greencheck')
 const debug = require("debug")("tgwf:greenhouse")
+var sortBy = require('lodash.sortby')
 
 function createErrorResult(err) {
   console.log(err)
@@ -35,8 +36,11 @@ class GreenAudit extends Audit {
       {key: 'gwfLink', itemType: 'url', text: 'Full report'},
     ]
 
-    const results = checks.sort(check => !check.green)
-      .map(check => {
+    const [first, ...rest] = checks
+    const sortedRest = sortBy(rest, ["hostedby", "green"])
+    const sortedChecks = [first, ...sortedRest]
+
+    const results = sortedChecks.map(check => {
         const url = `https://${check.url}`
         const hostedby = check.hostedby
         const green = check.green ? "Green" : "Grey"
