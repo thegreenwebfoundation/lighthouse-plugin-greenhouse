@@ -30,14 +30,22 @@ class GreenAudit extends Audit {
   static convertToTableDetails(checks) {
     const headings = [
       {key: 'url', itemType: 'url', text: 'Host'},
+      {key: 'hostedby', itemType: 'text', text: 'Hosted by'},
       {key: 'green', itemType: 'text', text: 'Green domain'},
+      {key: 'gwfLink', itemType: 'url', text: 'Full report'},
     ]
 
     const results = checks.sort(check => !check.green)
       .map(check => {
         const url = `https://${check.url}`
+        const hostedby = check.hostedby
         const green = check.green ? "Green" : "Grey"
-        return { url , green }
+        const gwfLink = {
+          type: "link",
+          text: "view report",
+          url: `https://www.thegreenwebfoundation.org/green-web-check/?url=${url}`
+        }
+        return { url , hostedby, green, gwfLink }
       })
     return Audit.makeTableDetails(headings, results)
   }
