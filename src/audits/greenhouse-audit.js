@@ -56,11 +56,11 @@ class GreenAudit extends Audit {
       })
 
       // the spread syntax turns our deduped set into an array, then makes sure they're long enough to check
-      const domainArray = [...domains].filter(domain => { return domain.length > 2 })
+      const domainArray = [...domains].filter(domain => domain.length > 2)
 
       const checkResults = await Greencheck.checkDomains(domainArray)
 
-      const greyDomainResults = checkResults.greenChecks.filter(res => { return res.green == false })
+      const greyDomainResults = checkResults.greenChecks.filter(res => res.green == false)
       const tableDetails = GreenAudit.convertToTableDetails(checkResults.greenChecks)
       return {
         score: checkResults.score,
