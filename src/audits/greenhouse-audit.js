@@ -1,6 +1,6 @@
 const { Audit, NetworkRecords } = require('lighthouse');
 const Greencheck = require('../helpers/greencheck')
-const debug = require("debug")
+const debug = require("debug")("tgwf:greenhouse")
 
 function createErrorResult(err) {
   console.log(err)
@@ -27,7 +27,20 @@ class GreenAudit extends Audit {
     };
   }
 
+  static convertToTableDetails(greenChecks) {
+    const headings = [
+      {key: 'url', itemType: 'url', text: 'Host'},
+      {key: 'green', itemType: 'text', text: 'Green domain'},
+    ]
 
+    const results = greenChecks.sort(res => !res.green)
+      .map(res => {
+        const url = `https://${res.url}`
+        const green = res.green ? "Green" : "Grey"
+        return { url , green }
+      })
+    return Audit.makeTableDetails(headings, results)
+  }
 
   static async audit(artifacts, context) {
     // Artifacts requested in `requiredArtifacts` above are passed to your audit.
@@ -48,17 +61,7 @@ class GreenAudit extends Audit {
       const checkResults = await Greencheck.checkDomains(domainArray)
 
       const greyDomainResults = checkResults.greenChecks.filter(res => { return res.green == false })
-
-      const headings = [
-        {key: 'url', itemType: 'url', text: 'Host'},
-        {key: 'green', itemType: 'text', text: 'Green domain'},
-      ]
-      const results = [
-        {url: "http://www.google.com", green: "Yes"},
-        {url: "http://www.kochindustries.com", green: "Hell no"},
-      ]
-      const tableDetails = Audit.makeTableDetails(headings, results)
-      debug(tableDetails)
+      const tableDetails = GreenAudit.convertToTableDetails(checkResults.greenChecks)
       return {
         score: checkResults.score,
         numericValue: greyDomainResults.length,
