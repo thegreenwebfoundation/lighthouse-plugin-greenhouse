@@ -1,5 +1,6 @@
 const { Audit, NetworkRecords } = require('lighthouse');
 const Greencheck = require('../helpers/greencheck')
+const debug = require("debug")
 
 function createErrorResult(err) {
   console.log(err)
@@ -48,10 +49,18 @@ class GreenAudit extends Audit {
 
       const greyDomainResults = checkResults.greenChecks.filter(res => { return res.green == false })
 
+      const headings = [
+        {key: 'url', itemType: 'url', text: 'URL'},
+      ]
+      const results = [
+        {url: "http://www.google.com"},
+      ]
+      const tableDetails = Audit.makeTableDetails(headings, results)
+      debug(tableDetails)
       return {
-
         score: checkResults.score,
         numericValue: greyDomainResults.length,
+        details: tableDetails,
       }
     } catch (error) {
       createErrorResult(error)
