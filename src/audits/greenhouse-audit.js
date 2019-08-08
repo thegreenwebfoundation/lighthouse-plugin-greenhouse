@@ -27,16 +27,16 @@ class GreenAudit extends Audit {
     };
   }
 
-  static convertToTableDetails(greenChecks) {
+  static convertToTableDetails(checks) {
     const headings = [
       {key: 'url', itemType: 'url', text: 'Host'},
       {key: 'green', itemType: 'text', text: 'Green domain'},
     ]
 
-    const results = greenChecks.sort(res => !res.green)
-      .map(res => {
-        const url = `https://${res.url}`
-        const green = res.green ? "Green" : "Grey"
+    const results = checks.sort(check => !check.green)
+      .map(check => {
+        const url = `https://${check.url}`
+        const green = check.green ? "Green" : "Grey"
         return { url , green }
       })
     return Audit.makeTableDetails(headings, results)
