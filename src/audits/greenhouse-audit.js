@@ -50,10 +50,12 @@ class GreenAudit extends Audit {
       const greyDomainResults = checkResults.greenChecks.filter(res => { return res.green == false })
 
       const headings = [
-        {key: 'url', itemType: 'url', text: 'URL'},
+        {key: 'url', itemType: 'url', text: 'Host'},
+        {key: 'green', itemType: 'text', text: 'Green domain'},
       ]
       const results = [
-        {url: "http://www.google.com"},
+        {url: "http://www.google.com", green: "Yes"},
+        {url: "http://www.kochindustries.com", green: "Hell no"},
       ]
       const tableDetails = Audit.makeTableDetails(headings, results)
       debug(tableDetails)
