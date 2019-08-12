@@ -1,4 +1,5 @@
 # Greenhouse - Lighthouse, but for a web that doesn't use fossil fuels
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 [Lighthouse][lighthouse] is a nice tool for helping you workout how to make a site more accessible, performance or mobile friendly.
 
@@ -90,3 +91,19 @@ If you use infrastructure run by someone else, it's important that you ask them 
 Yeah, it's scary AF.
 
 You can work with the [The Green Web Foundation](https://www.thegreenwebfoundation.org/) to work out a plan for reducing emissions, by following [this contact form](https://docs.google.com/forms/d/1W-Xc_2bjoor1sV2mufeYqoWntE1c0f0Ib6xL4HhHNc8/viewform?edit_requested=true), or come hang out in the [Climate Action Tech Slack](http://climateaction.tech/) - there's a bunhc of us trying to figure it out, and you're welcome to join us.
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table>
+  <tr>
+    <td align="center"><a href="http://pragtob.info/"><img src="https://avatars1.githubusercontent.com/u/606517?v=4" width="100px;" alt="Tobias Pfeiffer"/><br /><sub><b>Tobias Pfeiffer</b></sub></a><br /><a href="#infra-PragTob" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+  </tr>
+</table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
