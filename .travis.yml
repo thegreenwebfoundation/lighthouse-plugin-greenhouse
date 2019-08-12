@@ -1,6 +1,8 @@
 language: node_js
 addons:
   chrome: stable
+cache:
+  npm: false
 node_js:
   - 10
 before_script:
